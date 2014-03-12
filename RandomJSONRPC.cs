@@ -391,9 +391,8 @@ namespace org.random.JSONRPC
         /// <returns>JOBject with method params</returns>
         private JObject GetUsage()
         {
-            mJSONParams = new JObject(
-                new JProperty(APIKEY, mApiKey),
-                new JProperty(GET_USAGE_METHOD));
+            mJSONParams = new JObject(new JProperty(APIKEY, mApiKey));
+            mJSONRequest = InitMethod(GET_USAGE_METHOD);
             SendRequest();
             return mJSONResponse;
         }
